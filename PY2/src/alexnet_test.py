@@ -33,7 +33,7 @@ caffe.set_mode_cpu()
 # caffe.set_mode_gpu()
 caffe_root = '../'
 caffemodel = caffe_root + ''
-deploy = caffe_root + ''
+deploy = caffe_root + 'train/deploy.prototxt'
 net = caffe.Net(deploy, caffemodel, caffe.TEST)
 
 mu = np.load(caffe_root+'data/ilsvrc_2012_mean.npy')
@@ -47,6 +47,7 @@ transformer.set_channel_swap('data', (2,1,0))
 
 while(1):
     img_num = raw_input("Enter images number:")
-    if img_num == '': break
+    if img_num == '':
+        break
     img = img_root + '{:0>6}'.format(img_num) + '.jpg'
     classification(img, net, transformer, synset_words)
