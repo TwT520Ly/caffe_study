@@ -1,0 +1,4 @@
+Caffe在线可视化工具：http://ethereon.github.io/netscope/#/editor
+注意：
+1.不能//这种注释
+2.Shift+Enter更新结构图
